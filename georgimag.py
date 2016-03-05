@@ -2,16 +2,13 @@
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-import csv
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 import requests
-
+import csv
 
 with open('georgiafacurls.csv','rU') as myfile:
         reader = csv.reader(myfile, delimiter=',')
@@ -36,8 +33,6 @@ with open(name + " image.jpeg", 'wb') as f:
     f.write(img.content)
 
 namelist.append([name + ".jpeg"])
-
-print namelist
 
 for URL in rows[1:len(rows)-1]:
 	driver.find_element_by_tag_name('body').send_keys(Keys.COMMAND + 't')
